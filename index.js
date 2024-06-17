@@ -13,17 +13,23 @@ let usuarios = [
 
 let entrada = "";
 
-console.log("Digite seu nome:");
+console.log("Digite o e-mail a ser pesquisado:");
 
 process.stdin.on("data", function (data) {
-  let entrada = data.toString().trim();
+  let email = data.toString().trim();
+  let usuario
 
   for (let i = 0; i < usuarios.length; i++) {
-    if (entrada == usuarios[i].nome) {
+    if (usuarios[i].email == email) {
+        usuario = usuarios[i]
       console.log("Seja bem-vindo!");
-      break;
-     }else {
-        console.log("Usuario não encontrado")
-     }
+    }
+  }
+  if(usuario){
+    console.log(usuario)
+  }else{
+    console.log("Usuario não encontrado")
   }
 });
+
+
