@@ -25,4 +25,9 @@ process.stdin.on("data", function (data) {
       console.log("Seja bem-vindo!");
     }
   }
+  if(usuario){
+    console.log(usuario)
+  }else{
+    console.log("Usuario não encontrado")
+  }
 });
